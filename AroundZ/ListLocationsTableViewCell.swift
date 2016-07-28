@@ -10,6 +10,10 @@ import UIKit
 
 class ListLocationsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var locationTitleLabel: UILabel!
+    @IBOutlet weak var locationModificationTimeLabel: UILabel!
+    @IBOutlet weak var locationCategoryLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

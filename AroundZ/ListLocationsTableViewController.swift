@@ -7,27 +7,73 @@
 //
 
 import UIKit
+import RealmSwift
 
-class ListDestinationsTableViewController: UITableViewController {
+class ListLocationsTableViewController: UITableViewController {
 
+    var locations: Results<Location>! {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        locations = RealmHelper.retrieveLocations()
     }
     
-    // 1
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return locations.count
     }
     
-    // 2
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        // 3
-        let cell = tableView.dequeueReusableCellWithIdentifier("listDestinationsTableViewCell", forIndexPath: indexPath)
         
-        // 4
-        cell.textLabel?.text = "Yay - it's working!"
+        let cell = tableView.dequeueReusableCellWithIdentifier("listLocationsTableViewCell", forIndexPath: indexPath) as! ListLocationsTableViewCell
+        let row = indexPath.row
         
-        // 5
+        let location = locations[row]
+        
+        cell.locationTitleLabel.text = location.name
+        cell.locationModificationTimeLabel.text = location.modificationTime.convertToString()
+        cell.locationCategoryLabel.text = location.category
+        
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // 1
+        if let identifier = segue.identifier {
+            // 2
+            if identifier == "displayLocation" {
+                // 3
+                print("table cell tapped")
+                let indexPath = tableView.indexPathForSelectedRow!
+                let location = locations[indexPath.row]
+                // 3
+                let displayLocationViewController = segue.destinationViewController as! DisplayLocationViewController
+                // 4
+                displayLocationViewController.location = location
+                
+            } else if identifier == "addLocation" {
+                print("add button tapped")
+            }
+        }
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        // 2
+        if editingStyle == .Delete {
+            RealmHelper.deleteLocation(locations[indexPath.row])
+            //2
+            locations = RealmHelper.retrieveLocations()
+        }
+    }
+    
+        
+    @IBAction func unwindToListNotesViewController(segue: UIStoryboardSegue) {
+        
+        // for now, simply defining the method is sufficient.
+        // we'll add code later
+        
     }
 }

@@ -7,8 +7,17 @@
 //
 
 import UIKit
+import RealmSwift
+
+
 
 class DisplayLocationViewController: UIViewController {
+    
+    var location: Location?
+    
+    @IBOutlet weak var locationNameTextField: UITextField!
+    @IBOutlet weak var locationAddressTextField: UITextField!
+    @IBOutlet weak var locationCategoryTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,20 +25,47 @@ class DisplayLocationViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        // 1
+        
+        if let location = location {
+        locationNameTextField.text = location.name
+        locationAddressTextField.text = location.address
+        locationCategoryTextField.text = location.category
+        } else {
+        locationNameTextField.text = ""
+        locationAddressTextField.text = ""
+        locationCategoryTextField.text = ""
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+        let listLocationsTableViewController = segue.destinationViewController as! ListLocationsTableViewController
+        if segue.identifier == "Save" {
+           
+            if let location = location {
+                    let newLocation = Location()
+                    newLocation.name = locationNameTextField.text ?? ""
+                    newLocation.address = locationAddressTextField.text ?? ""
+                    location.category = locationCategoryTextField.text ?? ""
+//                    newLocation.modificationTime = NSDate()
+              
+                    RealmHelper.updateLocation(location, newLocation: newLocation)
+                
+                } else {
+                    let location = Location()
+                    location.name = locationNameTextField.text ?? ""
+                    location.address = locationAddressTextField.text ?? ""
+                    location.category = locationCategoryTextField.text ?? ""
+                    location.modificationTime = NSDate()
+                
+                    RealmHelper.addLocation(location)
+                }
+            
+                listLocationsTableViewController.locations = RealmHelper.retrieveLocations()
+            }
+        }
+
 
 }

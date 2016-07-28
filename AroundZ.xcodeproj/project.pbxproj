@@ -7,21 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		835AC59119A7560BE63101AC /* Pods_AroundZ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 855BBFD8F05729483BE82777 /* Pods_AroundZ.framework */; };
 		F12C60161D48C6CA00D4AA85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12C60151D48C6CA00D4AA85 /* AppDelegate.swift */; };
-		F12C60181D48C6CA00D4AA85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12C60171D48C6CA00D4AA85 /* ViewController.swift */; };
 		F12C601B1D48C6CA00D4AA85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F12C60191D48C6CA00D4AA85 /* Main.storyboard */; };
 		F12C601D1D48C6CA00D4AA85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F12C601C1D48C6CA00D4AA85 /* Assets.xcassets */; };
 		F12C60201D48C6CA00D4AA85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F12C601E1D48C6CA00D4AA85 /* LaunchScreen.storyboard */; };
+		F12C60281D48C8B300D4AA85 /* ListLocationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12C60271D48C8B300D4AA85 /* ListLocationsTableViewController.swift */; };
+		F1475DBE1D49BD40004DA87F /* ListLocationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1475DBD1D49BD40004DA87F /* ListLocationsTableViewCell.swift */; };
+		F1475DC51D49C49C004DA87F /* AllLocationsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1475DC41D49C49C004DA87F /* AllLocationsMapViewController.swift */; };
+		F1475DC71D49C71D004DA87F /* DisplayLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1475DC61D49C71D004DA87F /* DisplayLocationViewController.swift */; };
+		F1475DC91D49CECD004DA87F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1475DC81D49CECD004DA87F /* Location.swift */; };
+		F1475DCD1D49CFA6004DA87F /* NSDate+convertToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1475DCC1D49CFA6004DA87F /* NSDate+convertToString.swift */; };
+		F1475DCF1D49E4DE004DA87F /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1475DCE1D49E4DE004DA87F /* RealmHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7919C484D7A7919175B69074 /* Pods-AroundZ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AroundZ.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AroundZ/Pods-AroundZ.debug.xcconfig"; sourceTree = "<group>"; };
+		855BBFD8F05729483BE82777 /* Pods_AroundZ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AroundZ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9394B849E98D1B034722EC35 /* Pods-AroundZ.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AroundZ.release.xcconfig"; path = "Pods/Target Support Files/Pods-AroundZ/Pods-AroundZ.release.xcconfig"; sourceTree = "<group>"; };
 		F12C60121D48C6CA00D4AA85 /* AroundZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AroundZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12C60151D48C6CA00D4AA85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F12C60171D48C6CA00D4AA85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F12C601A1D48C6CA00D4AA85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F12C601C1D48C6CA00D4AA85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F12C601F1D48C6CA00D4AA85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F12C60211D48C6CA00D4AA85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F12C60271D48C8B300D4AA85 /* ListLocationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListLocationsTableViewController.swift; path = ../ListLocationsTableViewController.swift; sourceTree = "<group>"; };
+		F1475DBD1D49BD40004DA87F /* ListLocationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListLocationsTableViewCell.swift; path = ../ListLocationsTableViewCell.swift; sourceTree = "<group>"; };
+		F1475DC41D49C49C004DA87F /* AllLocationsMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllLocationsMapViewController.swift; sourceTree = "<group>"; };
+		F1475DC61D49C71D004DA87F /* DisplayLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayLocationViewController.swift; sourceTree = "<group>"; };
+		F1475DC81D49CECD004DA87F /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		F1475DCC1D49CFA6004DA87F /* NSDate+convertToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+convertToString.swift"; sourceTree = "<group>"; };
+		F1475DCE1D49E4DE004DA87F /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +45,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				835AC59119A7560BE63101AC /* Pods_AroundZ.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		98E618048964E96B9A0AC031 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7919C484D7A7919175B69074 /* Pods-AroundZ.debug.xcconfig */,
+				9394B849E98D1B034722EC35 /* Pods-AroundZ.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AD52B779E1385E00ECE8C9F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				855BBFD8F05729483BE82777 /* Pods_AroundZ.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F12C60091D48C6CA00D4AA85 = {
 			isa = PBXGroup;
 			children = (
 				F12C60141D48C6CA00D4AA85 /* AroundZ */,
 				F12C60131D48C6CA00D4AA85 /* Products */,
+				98E618048964E96B9A0AC031 /* Pods */,
+				AD52B779E1385E00ECE8C9F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +91,59 @@
 			isa = PBXGroup;
 			children = (
 				F12C60151D48C6CA00D4AA85 /* AppDelegate.swift */,
-				F12C60171D48C6CA00D4AA85 /* ViewController.swift */,
+				F1475DC21D49C352004DA87F /* Models */,
+				F1475DC01D49C223004DA87F /* Controllers */,
+				F1475DC31D49C35E004DA87F /* Views */,
+				F1475DCA1D49CF57004DA87F /* Extensions */,
+				F1475DCB1D49CF60004DA87F /* Helpers */,
 				F12C60191D48C6CA00D4AA85 /* Main.storyboard */,
 				F12C601C1D48C6CA00D4AA85 /* Assets.xcassets */,
 				F12C601E1D48C6CA00D4AA85 /* LaunchScreen.storyboard */,
 				F12C60211D48C6CA00D4AA85 /* Info.plist */,
 			);
 			path = AroundZ;
+			sourceTree = "<group>";
+		};
+		F1475DC01D49C223004DA87F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F12C60271D48C8B300D4AA85 /* ListLocationsTableViewController.swift */,
+				F1475DC41D49C49C004DA87F /* AllLocationsMapViewController.swift */,
+				F1475DC61D49C71D004DA87F /* DisplayLocationViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F1475DC21D49C352004DA87F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F1475DC81D49CECD004DA87F /* Location.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F1475DC31D49C35E004DA87F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1475DBD1D49BD40004DA87F /* ListLocationsTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F1475DCA1D49CF57004DA87F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F1475DCC1D49CFA6004DA87F /* NSDate+convertToString.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F1475DCB1D49CF60004DA87F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F1475DCE1D49E4DE004DA87F /* RealmHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +153,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F12C60241D48C6CA00D4AA85 /* Build configuration list for PBXNativeTarget "AroundZ" */;
 			buildPhases = (
+				378B97621C17EFF52BE612EA /* [CP] Check Pods Manifest.lock */,
 				F12C600E1D48C6CA00D4AA85 /* Sources */,
 				F12C600F1D48C6CA00D4AA85 /* Frameworks */,
 				F12C60101D48C6CA00D4AA85 /* Resources */,
+				79F1813CFBE883E58EA49698 /* [CP] Embed Pods Frameworks */,
+				1564AEEE4F466A6C0E2F8D77 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,13 +215,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1564AEEE4F466A6C0E2F8D77 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AroundZ/Pods-AroundZ-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		378B97621C17EFF52BE612EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		79F1813CFBE883E58EA49698 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AroundZ/Pods-AroundZ-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F12C600E1D48C6CA00D4AA85 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F12C60181D48C6CA00D4AA85 /* ViewController.swift in Sources */,
+				F1475DCD1D49CFA6004DA87F /* NSDate+convertToString.swift in Sources */,
+				F1475DC51D49C49C004DA87F /* AllLocationsMapViewController.swift in Sources */,
+				F1475DC71D49C71D004DA87F /* DisplayLocationViewController.swift in Sources */,
+				F12C60281D48C8B300D4AA85 /* ListLocationsTableViewController.swift in Sources */,
 				F12C60161D48C6CA00D4AA85 /* AppDelegate.swift in Sources */,
+				F1475DCF1D49E4DE004DA87F /* RealmHelper.swift in Sources */,
+				F1475DC91D49CECD004DA87F /* Location.swift in Sources */,
+				F1475DBE1D49BD40004DA87F /* ListLocationsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +386,7 @@
 		};
 		F12C60251D48C6CA00D4AA85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7919C484D7A7919175B69074 /* Pods-AroundZ.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AroundZ/Info.plist;
@@ -258,6 +398,7 @@
 		};
 		F12C60261D48C6CA00D4AA85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9394B849E98D1B034722EC35 /* Pods-AroundZ.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AroundZ/Info.plist;
@@ -286,6 +427,7 @@
 				F12C60261D48C6CA00D4AA85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

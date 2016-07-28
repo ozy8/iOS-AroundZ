@@ -7,3 +7,11 @@
 //
 
 import Foundation
+import RealmSwift
+
+class Location: Object  {
+    var name = ""
+    var address = ""
+    var category = ""
+    var modificationTime = NSDate()
+}
