@@ -34,6 +34,7 @@ class ListLocationsTableViewController: UITableViewController {
         let location = locations[row]
         
         cell.locationTitleLabel.text = location.name
+//        cell.locationTitleLabel.text = "fudge"
         cell.locationModificationTimeLabel.text = location.modificationTime.convertToString()
         cell.locationCategoryLabel.text = location.category
         

@@ -10,8 +10,8 @@ import Foundation
 import RealmSwift
 
 class Location: Object  {
-    var name = ""
-    var address = ""
-    var category = ""
-    var modificationTime = NSDate()
+    dynamic var name = ""
+    dynamic var address = ""
+    dynamic var category = ""
+    dynamic var modificationTime = NSDate()
 }

@@ -19,6 +19,7 @@
 		F1475DC91D49CECD004DA87F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1475DC81D49CECD004DA87F /* Location.swift */; };
 		F1475DCD1D49CFA6004DA87F /* NSDate+convertToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1475DCC1D49CFA6004DA87F /* NSDate+convertToString.swift */; };
 		F1475DCF1D49E4DE004DA87F /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1475DCE1D49E4DE004DA87F /* RealmHelper.swift */; };
+		F1475DD11D49FAB3004DA87F /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1475DD01D49FAB3004DA87F /* LocationSearchTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		F1475DC81D49CECD004DA87F /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		F1475DCC1D49CFA6004DA87F /* NSDate+convertToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+convertToString.swift"; sourceTree = "<group>"; };
 		F1475DCE1D49E4DE004DA87F /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
+		F1475DD01D49FAB3004DA87F /* LocationSearchTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				F12C60271D48C8B300D4AA85 /* ListLocationsTableViewController.swift */,
+				F1475DD01D49FAB3004DA87F /* LocationSearchTable.swift */,
 				F1475DC41D49C49C004DA87F /* AllLocationsMapViewController.swift */,
 				F1475DC61D49C71D004DA87F /* DisplayLocationViewController.swift */,
 			);
@@ -271,6 +274,7 @@
 				F1475DCD1D49CFA6004DA87F /* NSDate+convertToString.swift in Sources */,
 				F1475DC51D49C49C004DA87F /* AllLocationsMapViewController.swift in Sources */,
 				F1475DC71D49C71D004DA87F /* DisplayLocationViewController.swift in Sources */,
+				F1475DD11D49FAB3004DA87F /* LocationSearchTable.swift in Sources */,
 				F12C60281D48C8B300D4AA85 /* ListLocationsTableViewController.swift in Sources */,
 				F12C60161D48C6CA00D4AA85 /* AppDelegate.swift in Sources */,
 				F1475DCF1D49E4DE004DA87F /* RealmHelper.swift in Sources */,
