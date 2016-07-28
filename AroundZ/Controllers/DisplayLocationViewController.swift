@@ -15,7 +15,8 @@ protocol HandleMapSearch {
 }
 
 
-class DisplayLocationViewController: UIViewController {
+class DisplayLocationViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    //maps sections
     let locationManager = CLLocationManager()
     var resultSearchController:UISearchController? = nil
     var selectedPin:MKPlacemark? = nil
@@ -24,6 +25,13 @@ class DisplayLocationViewController: UIViewController {
     
     var location: Location?
     
+    //creating the dataSource for the cateogry picker view/maybe can create a class in future
+    var categoryTypes = ["Cafes", "Restaurants", "Shopping", "Meeting Point", "Hotels", "Random"]
+    var picker = UIPickerView()
+    
+    
+    
+    //creating outlets for the page
     @IBOutlet weak var locationNameTextField: UITextField!
     @IBOutlet weak var locationAddressTextField: UITextField!
     @IBOutlet weak var locationCategoryTextField: UITextField!
@@ -54,9 +62,39 @@ class DisplayLocationViewController: UIViewController {
         locationSearchTable.oneLocationMapView = oneLocationMapView
         
         locationSearchTable.handleMapSearchDelegate = self
-
+        
+        
+        //picker view delegate/dataSource
+        picker.delegate = self
+        picker.dataSource = self
+        locationCategoryTextField.inputView = picker
     }
+    
+    
+    /////////////Picker View Functions
+    // returns the number of 'columns' to display.
+  
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    // returns the # of rows in each component..
+  
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        return categoryTypes.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        locationCategoryTextField.text = categoryTypes[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return categoryTypes[row]
+    }
+    ////////////////
 
+    
+    /////////Creating the location functions
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         // 1
@@ -147,6 +185,13 @@ extension DisplayLocationViewController: HandleMapSearch {
     func dropPinZoomIn(placemark:MKPlacemark){
         // cache the pin
         selectedPin = placemark
+        
+        
+        //setting the fields dynamically
+        locationNameTextField.text = placemark.name
+        locationAddressTextField.text = placemark.postalCode
+        
+        
         // clear existing pins
         oneLocationMapView.removeAnnotations(oneLocationMapView.annotations)
         let annotation = MKPointAnnotation()
