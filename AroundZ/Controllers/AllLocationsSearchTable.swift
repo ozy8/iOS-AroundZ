@@ -1,18 +1,18 @@
 //
-//  LocationSearchTable.swift
-//  MapKitTutorial
+//  AllLocationsSearchTable.swift
+//  AroundZ
 //
-//  Created by Ow Zhiyin on 27/7/16.
+//  Created by Ow Zhiyin on 29/7/16.
 //  Copyright © 2016 Ow Zhiyin. All rights reserved.
 //
 
 import UIKit
 import MapKit
 
-class LocationSearchTable : UITableViewController {
+class AllLocationsSearchTable : UITableViewController {
     
     var matchingItems:[MKMapItem] = []
-    var oneLocationMapView: MKMapView? = nil
+    var allLocationsMapView: MKMapView? = nil
     var handleMapSearchDelegate:HandleMapSearch? = nil
     
     func parseAddress(selectedItem:MKPlacemark) -> String {
@@ -22,9 +22,9 @@ class LocationSearchTable : UITableViewController {
         let comma = (selectedItem.subThoroughfare != nil || selectedItem.thoroughfare != nil) && (selectedItem.subAdministrativeArea != nil || selectedItem.administrativeArea != nil) ? ", " : ""
         // put a space between "Washington" and "DC"
         let secondSpace = (selectedItem.subAdministrativeArea != nil && selectedItem.administrativeArea != nil) ? " " : ""
-//        let thirdSpace = (selectedItem.administrativeArea != nil && selectedItem.country != nil) ? " " : ""
+        //        let thirdSpace = (selectedItem.administrativeArea != nil && selectedItem.country != nil) ? " " : ""
         let addressLine = String(
-            format:"%@%@%@%@%@%@%@%@%@",
+            format:"%@%@%@%@%@%@%@",
             // street number
             selectedItem.subThoroughfare ?? "",
             firstSpace,
@@ -35,21 +35,20 @@ class LocationSearchTable : UITableViewController {
             selectedItem.locality ?? "",
             secondSpace,
             // state
-            selectedItem.administrativeArea ?? "",
-            " ",
-            selectedItem.country ?? ""
+            selectedItem.administrativeArea ?? ""
+            //            thirdSpace
         )
         return addressLine
     }
 }
 
-extension LocationSearchTable : UISearchResultsUpdating {
+extension AllLocationsSearchTable : UISearchResultsUpdating {
     func updateSearchResultsForSearchController(searchController: UISearchController) {
-        guard let oneLocationMapView = oneLocationMapView,
+        guard let allLocationsMapView = allLocationsMapView,
             let searchBarText = searchController.searchBar.text else { return }
         let request = MKLocalSearchRequest()
         request.naturalLanguageQuery = searchBarText
-        request.region = oneLocationMapView.region
+        request.region = allLocationsMapView.region
         let search = MKLocalSearch(request: request)
         search.startWithCompletionHandler { response, _ in
             guard let response = response else {
@@ -62,29 +61,26 @@ extension LocationSearchTable : UISearchResultsUpdating {
     }
 }
 
-extension LocationSearchTable {
+extension AllLocationsSearchTable {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return matchingItems.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell")!
+        let cell = tableView.dequeueReusableCellWithIdentifier("allLocationsCell")!
         let selectedItem = matchingItems[indexPath.row].placemark
-        
         cell.textLabel?.text = selectedItem.name
-//                cell.detailTextLabel?.text = ""
+        //        cell.detailTextLabel?.text = ""
         cell.detailTextLabel?.text = parseAddress(selectedItem)
         return cell
     }
 }
 
-extension LocationSearchTable {
+extension AllLocationsSearchTable {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let selectedItem = matchingItems[indexPath.row].placemark
         handleMapSearchDelegate?.dropPinZoomIn(selectedItem)
         dismissViewControllerAnimated(true, completion: nil)
     }
 }
-
-
 

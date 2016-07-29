@@ -20,6 +20,7 @@
 		F1475DCD1D49CFA6004DA87F /* NSDate+convertToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1475DCC1D49CFA6004DA87F /* NSDate+convertToString.swift */; };
 		F1475DCF1D49E4DE004DA87F /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1475DCE1D49E4DE004DA87F /* RealmHelper.swift */; };
 		F1475DD11D49FAB3004DA87F /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1475DD01D49FAB3004DA87F /* LocationSearchTable.swift */; };
+		F1FA98481D4B20EF00A1CA1C /* AllLocationsSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FA98471D4B20EF00A1CA1C /* AllLocationsSearchTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		F1475DCC1D49CFA6004DA87F /* NSDate+convertToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+convertToString.swift"; sourceTree = "<group>"; };
 		F1475DCE1D49E4DE004DA87F /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		F1475DD01D49FAB3004DA87F /* LocationSearchTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
+		F1FA98471D4B20EF00A1CA1C /* AllLocationsSearchTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllLocationsSearchTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				F12C60271D48C8B300D4AA85 /* ListLocationsTableViewController.swift */,
 				F1475DD01D49FAB3004DA87F /* LocationSearchTable.swift */,
 				F1475DC41D49C49C004DA87F /* AllLocationsMapViewController.swift */,
+				F1FA98471D4B20EF00A1CA1C /* AllLocationsSearchTable.swift */,
 				F1475DC61D49C71D004DA87F /* DisplayLocationViewController.swift */,
 			);
 			path = Controllers;
@@ -184,7 +187,7 @@
 				TargetAttributes = {
 					F12C60111D48C6CA00D4AA85 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 5T3EKU44GA;
+						DevelopmentTeam = M49S2JEA6Q;
 					};
 				};
 			};
@@ -275,6 +278,7 @@
 				F1475DCD1D49CFA6004DA87F /* NSDate+convertToString.swift in Sources */,
 				F1475DC51D49C49C004DA87F /* AllLocationsMapViewController.swift in Sources */,
 				F1475DC71D49C71D004DA87F /* DisplayLocationViewController.swift in Sources */,
+				F1FA98481D4B20EF00A1CA1C /* AllLocationsSearchTable.swift in Sources */,
 				F1475DD11D49FAB3004DA87F /* LocationSearchTable.swift in Sources */,
 				F12C60281D48C8B300D4AA85 /* ListLocationsTableViewController.swift in Sources */,
 				F12C60161D48C6CA00D4AA85 /* AppDelegate.swift in Sources */,

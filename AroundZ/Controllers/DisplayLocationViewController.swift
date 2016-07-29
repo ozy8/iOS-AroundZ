@@ -44,6 +44,8 @@ class DisplayLocationViewController: UIViewController, UIPickerViewDataSource, U
         locationManager.requestLocation()
         // Do any additional setup after loading the view.
         
+        
+        
         let locationSearchTable = storyboard!.instantiateViewControllerWithIdentifier("LocationSearchTable") as! LocationSearchTable
         resultSearchController = UISearchController(searchResultsController: locationSearchTable)
         resultSearchController?.searchResultsUpdater = locationSearchTable
@@ -51,7 +53,9 @@ class DisplayLocationViewController: UIViewController, UIPickerViewDataSource, U
         //configures search bar
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
+        searchBar.barTintColor = UIColor.init(red: 255, green: 255, blue: 102, alpha: 1)
         searchBar.placeholder = "Search for places"
+
         navigationItem.titleView = resultSearchController?.searchBar
         
         //configure appearance
@@ -103,6 +107,8 @@ class DisplayLocationViewController: UIViewController, UIPickerViewDataSource, U
             locationNameTextField.text = location.name
             locationAddressTextField.text = location.address
             locationCategoryTextField.text = location.category
+            //set the pin when view loads
+//            selectedPin = location.address
         } else {
             locationNameTextField.text = ""
             locationAddressTextField.text = ""
@@ -169,7 +175,7 @@ extension DisplayLocationViewController : CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            let span = MKCoordinateSpanMake(0.05, 0.05)
+            let span = MKCoordinateSpanMake(0.025, 0.025)
             let region = MKCoordinateRegion(center: location.coordinate, span: span)
             oneLocationMapView.setRegion(region, animated: true)
         }
@@ -188,8 +194,35 @@ extension DisplayLocationViewController: HandleMapSearch {
         
         
         //setting the fields dynamically
+        
+        let firstSpace = (placemark.subThoroughfare != nil && placemark.thoroughfare != nil) ? " " : ""
+        // put a comma between street and city/state
+        let comma = (placemark.subThoroughfare != nil || placemark.thoroughfare != nil) && (placemark.subAdministrativeArea != nil || placemark.administrativeArea != nil) ? ", " : ""
+        // put a space between "Washington" and "DC"
+        let secondSpace = (placemark.subAdministrativeArea != nil && placemark.administrativeArea != nil) ? " " : ""
+        //        let thirdSpace = (placemark != nil && placemark != nil) ? " " : ""
+      
         locationNameTextField.text = placemark.name
-        locationAddressTextField.text = placemark.postalCode
+        
+        locationAddressTextField.text = String (
+            format:"%@%@%@%@%@%@%@%@%@%@%@",
+            // street number
+            placemark.subThoroughfare ?? "",
+            firstSpace,
+            // street name
+            placemark.thoroughfare ?? "",
+            comma,
+            // city
+            placemark.locality ?? "",
+            secondSpace,
+            // state
+            placemark.administrativeArea ?? "",
+            " ",
+            placemark.country ?? "",
+            " ",
+            placemark.postalCode ?? ""
+        )
+        // placemark.postalCode
         
         
         // clear existing pins
