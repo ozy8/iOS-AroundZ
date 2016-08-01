@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-945" y="66"/>
         </scene>
-        <!--Locations-->
+        <!--AroundZ-->
         <scene sceneID="InY-le-NNS">
             <objects>
                 <tableViewController id="21F-Wa-SPu" customClass="ListLocationsTableViewController" customModule="AroundZ" customModuleProvider="target" sceneMemberID="viewController">
@@ -81,7 +81,7 @@
                             <outlet property="delegate" destination="21F-Wa-SPu" id="iyT-VH-3ON"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Locations" id="ogd-jG-i8g">
+                    <navigationItem key="navigationItem" title="AroundZ" id="ogd-jG-i8g">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="YbH-m7-SUl">
                             <connections>
                                 <segue destination="TEh-ef-zXG" kind="show" identifier="addLocation" id="mSw-ME-ZZu"/>
@@ -310,11 +310,11 @@
             </objects>
             <point key="canvasLocation" x="1549" y="499"/>
         </scene>
-        <!--List-->
+        <!--Places List-->
         <scene sceneID="60l-9m-0gW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YKO-c6-nQd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List" image="iconHome" selectedImage="iconHome" id="hXH-8h-p6X"/>
+                    <tabBarItem key="tabBarItem" title="Places List" image="iconList" selectedImage="iconList" id="hXH-8h-p6X"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GyM-nm-iMB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -355,7 +355,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="iconHome" width="25" height="25"/>
+        <image name="iconList" width="30" height="30"/>
         <image name="iconMap" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>

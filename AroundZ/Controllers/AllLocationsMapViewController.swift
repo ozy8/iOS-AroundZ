@@ -38,7 +38,7 @@ class AllLocationsMapViewController: UIViewController {
         
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
-        searchBar.placeholder = "Search for saved locations"
+        searchBar.placeholder = "Search for places"
         navigationItem.titleView = resultSearchController?.searchBar
         resultSearchController?.hidesNavigationBarDuringPresentation = false
         resultSearchController?.dimsBackgroundDuringPresentation = true
