@@ -1,4 +1,7 @@
 PODS:
+  - Mixpanel (3.0.0):
+    - Mixpanel/Mixpanel (= 3.0.0)
+  - Mixpanel/Mixpanel (3.0.0)
   - Realm (1.0.1):
     - Realm/Headers (= 1.0.1)
   - Realm/Headers (1.0.1)
@@ -6,12 +9,14 @@ PODS:
     - Realm (= 1.0.1)
 
 DEPENDENCIES:
+  - Mixpanel
   - RealmSwift
 
 SPEC CHECKSUMS:
+  Mixpanel: ac92056ee35a961362513ba11049e67cffcaa1f1
   Realm: 2e15e39d35b08abb529e212ed5d8af107b5236c8
   RealmSwift: d73ea2af08c3676dbdd5e4b669651a0f492162a4
 
-PODFILE CHECKSUM: 87a3b47d146568268131e0ed00f4b145e48d44ee
+PODFILE CHECKSUM: 287a51fa402d331a68f783d4185b97c1518d9aa2
 
 COCOAPODS: 1.0.1

@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Mixpanel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-AroundZ.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3529E72B0FAC56809BE1DD574AA54A8F</key>
+		<key>8EFE724FDDAA2478F44F082C05BA272C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9889ED8DB19B9FEC6193791BA2D4061E</key>
+		<key>98348BC3AD321BA88C7EB1C912B93A27</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C2C4759CB35680C5AFDA0DD32BB6BDA9</key>
+		<key>9F9321AFFCC4B43325DC5543F1D699BC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A60F5CACB77C7EDD3CB400B3E489A27A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

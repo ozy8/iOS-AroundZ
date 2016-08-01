@@ -14,4 +14,7 @@ class Location: Object  {
     dynamic var address = ""
     dynamic var category = ""
     dynamic var modificationTime = NSDate()
+    //creating variable to save the lat long
+//    dynamic var latitude = ""
+//    dynamic var longitude = ""
 }

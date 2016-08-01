@@ -8,17 +8,24 @@
 
 import UIKit
 import MapKit
+import CoreLocation
+import AddressBookUI
+import RealmSwift
 
 class AllLocationsMapViewController: UIViewController {
     let locationManager = CLLocationManager()
     
     var resultSearchController:UISearchController? = nil
     var selectedPin:MKPlacemark? = nil
-    
+
+    //creating var to recall locaiotns from realm
+    var locations: Results<Location>!
     
     @IBOutlet weak var allLocationsMapView: MKMapView!
 
     override func viewDidLoad() {
+//        self.tableView.reloadData()
+
         super.viewDidLoad()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -42,7 +49,120 @@ class AllLocationsMapViewController: UIViewController {
         
         allLocationsSearchTable.handleMapSearchDelegate = self
         
+//        //creating locations to be used later
+//        locations = RealmHelper.retrieveLocations()
+//        print(locations[0])
+//
+//        //creating annotations to populate map with all the POI
+//        var annotations = [MKPointAnnotation]()
+//        
+//        for location in locations {
+//
+////            let coordinate = CLLocationCoordinate2D(latitude: convertedLatitude, longitude: convertedLongitude)
+//            print(location.address)
+////            forwardGeocoding(location.address)
+//            
+//            var place : CLLocationCoordinate2D?
+//            
+//            CLGeocoder().geocodeAddressString(location.address, completionHandler: { (placemarks, error) in
+//                if error != nil {
+//                    print(error)
+//                    return
+//                }
+//                if placemarks?.count > 0 {
+//                    let placemark = placemarks?[0]
+//                    let location = placemark?.location
+//                    let coordinate = location?.coordinate
+//                    print("\nlat: \(coordinate!.latitude), long: \(coordinate!.longitude)")
+//                    place = coordinate
+//                }
+//            print(place)
+//            
+//            
+//            let name = location.name
+////            let mediaURL = dictionary["mediaURL"] as! String
+//            let annotation = MKPointAnnotation()
+//            annotation.coordinate = place!
+//            print("big bang")
+//            print(annotation.coordinate)
+//            annotation.title = "\(name)"
+////            annotation.subtitle = mediaURL
+//            annotations.append(annotation)
+//             
+//                
+//                //calling the func created below
+//                self.centerMapOnLocation(annotations[0], regionRadius: 1000.0)
+//                
+//                //add annotations to mapView
+//                self.allLocationsMapView.addAnnotations(annotations)
+//           })
+//        }
     }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        allLocationsMapView.removeAnnotations(allLocationsMapView.annotations)
+
+        //creating locations to be used later
+        locations = RealmHelper.retrieveLocations()
+//        print(locations[0])
+        
+        //creating annotations to populate map with all the POI
+        var annotations = [MKPointAnnotation]()
+        
+        for location in locations {
+            
+            //            let coordinate = CLLocationCoordinate2D(latitude: convertedLatitude, longitude: convertedLongitude)
+            print(location.address)
+            //            forwardGeocoding(location.address)
+            
+            var place : CLLocationCoordinate2D?
+            
+            CLGeocoder().geocodeAddressString(location.address, completionHandler: { (placemarks, error) in
+                if error != nil {
+                    print(error)
+                    return
+                }
+                if placemarks?.count > 0 {
+                    let placemark = placemarks?[0]
+                    let location = placemark?.location
+                    let coordinate = location?.coordinate
+                    print("\nlat: \(coordinate!.latitude), long: \(coordinate!.longitude)")
+                    place = coordinate
+                }
+                print(place)
+                
+                
+                let name = location.name
+                //            let mediaURL = dictionary["mediaURL"] as! String
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = place!
+                print(annotation.coordinate)
+                annotation.title = "\(name)"
+                annotation.subtitle = location.category
+                annotations.append(annotation)
+                
+                
+                //calling the func created below
+                self.centerMapOnLocation(annotations[0], regionRadius: 1000.0)
+                
+                //add annotations to mapView
+                self.allLocationsMapView.addAnnotations(annotations)
+            })
+        }
+
+    }
+    
+ 
+    //letting the map center one of the annotations
+    func centerMapOnLocation(location: MKPointAnnotation, regionRadius: Double) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+                                                                  regionRadius * 2.0, regionRadius * 2.0)
+        allLocationsMapView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    
+
     
     func getDirections(){
         if let selectedPin = selectedPin {

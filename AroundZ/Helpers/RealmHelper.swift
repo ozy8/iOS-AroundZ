@@ -8,6 +8,8 @@
 
 import Foundation
 import RealmSwift
+import CoreLocation
+import AddressBookUI
 
 class RealmHelper {
     //static methods will go here
@@ -35,6 +37,10 @@ class RealmHelper {
             locationToBeUpdated.address = newLocation.address
             locationToBeUpdated.modificationTime = newLocation.modificationTime
             locationToBeUpdated.category = newLocation.category
+//            locationToBeUpdated.latitude = newLocation.latitude
+//            locationToBeUpdated.longitude = newLocation.longitude
+            
+            
         }
     }
     

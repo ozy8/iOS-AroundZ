@@ -6,5 +6,6 @@ target 'AroundZ' do
   use_frameworks!
 
   # Pods for AroundZ
-  pod 'RealmSwift' 
+  pod 'RealmSwift'
+  pod 'Mixpanel'
 end
