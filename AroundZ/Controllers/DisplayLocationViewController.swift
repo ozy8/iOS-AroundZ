@@ -29,7 +29,7 @@ class DisplayLocationViewController: UIViewController, UIPickerViewDataSource, U
     var location: Location?
     
     //creating the dataSource for the cateogry picker view/maybe can create a class in future
-    var categoryTypes = ["Cafes", "Restaurants", "Shopping", "Meeting Point", "Hotels", "Random"]
+    var categoryTypes = ["Cafes", "Hawkers", "Restaurants", "Shopping", "Meeting Point", "Hotels", "Random"]
     var picker = UIPickerView()
     
     
@@ -75,8 +75,9 @@ class DisplayLocationViewController: UIViewController, UIPickerViewDataSource, U
         picker.delegate = self
         picker.dataSource = self
         locationCategoryTextField.inputView = picker
-
+//        self.picker.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 0.5)
     }
+    
     
     
     /////////////Picker View Functions
@@ -106,6 +107,7 @@ class DisplayLocationViewController: UIViewController, UIPickerViewDataSource, U
     override func viewWillAppear(animated: Bool) {
         
         super.viewWillAppear(animated)
+
         // 1
         oneLocationMapView.removeAnnotations(oneLocationMapView.annotations)
 
@@ -115,7 +117,7 @@ class DisplayLocationViewController: UIViewController, UIPickerViewDataSource, U
             locationAddressTextField.text = location.address
             locationCategoryTextField.text = location.category
             
-            //set the pin when view loads
+            //set the pin when view loads using forward geocoding
             var annotations = [MKPointAnnotation]()
             var place : CLLocationCoordinate2D?
             
@@ -193,29 +195,6 @@ class DisplayLocationViewController: UIViewController, UIPickerViewDataSource, U
     }
     
     
-    //forward geocoding
-//    func forwardGeocoding(address: String) -> CLLocationCoordinate2D{
-//        
-//        var place : CLLocationCoordinate2D?
-//        
-//        CLGeocoder().geocodeAddressString(address, completionHandler: { (placemarks, error) in
-//            if error != nil {
-//                print(error)
-//                return
-//            }
-//            if placemarks?.count > 0 {
-//                let placemark = placemarks?[0]
-//                let location = placemark?.location
-//                let coordinate = location?.coordinate
-//                print("\nlat: \(coordinate!.latitude), long: \(coordinate!.longitude)")
-//                place = coordinate
-//            }
-//           
-//        })
-//        return place!
-//    }
-//    
-    
     //letting the map center one of the annotations
     func centerMapOnLocation(location: MKPointAnnotation, regionRadius: Double) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
@@ -223,14 +202,6 @@ class DisplayLocationViewController: UIViewController, UIPickerViewDataSource, U
         oneLocationMapView.setRegion(coordinateRegion, animated: true)
     }
     
-    //show directions in Maps
-//    func getDirections(){
-//        if let selectedPin = selectedPin {
-//            let oneLocationMapView = MKMapItem(placemark: selectedPin)
-//            let launchOptions = [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving]
-//            oneLocationMapView.openInMapsWithLaunchOptions(launchOptions)
-//        }
-//    }
 }
 
 
@@ -310,24 +281,5 @@ extension DisplayLocationViewController: HandleMapSearch {
 }
 
 
-//extension DisplayLocationViewController : MKMapViewDelegate {
-//    func oneLocationMapView(oneLocationMapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?{
-//        if annotation is MKUserLocation {
-//            //return nil so map view draws "blue dot" for standard user location
-//            return nil
-//        }
-//        let reuseId = "pin"
-//        var pinView = oneLocationMapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView
-//        pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-//        pinView?.pinTintColor = UIColor.orangeColor()
-//        pinView?.canShowCallout = true
-//        let smallSquare = CGSize(width: 30, height: 30)
-//        let button = UIButton(frame: CGRect(origin: CGPointZero, size: smallSquare))
-//        button.setBackgroundImage(UIImage(named: "car"), forState: .Normal)
-//        button.addTarget(self, action: #selector(DisplayLocationViewController.getDirections), forControlEvents: .TouchUpInside)
-//        pinView?.leftCalloutAccessoryView = button
-//        return pinView
-//    }
-//}
 
 

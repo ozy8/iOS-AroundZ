@@ -106,22 +106,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5b0-De-gGD">
-                                <rect key="frame" x="0.0" y="64" width="600" height="30"/>
+                                <rect key="frame" x="0.0" y="68" width="600" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rqR-vQ-EQG">
-                                <rect key="frame" x="0.0" y="94" width="600" height="30"/>
+                                <rect key="frame" x="0.0" y="102" width="600" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UVd-lB-3ng">
-                                <rect key="frame" x="0.0" y="124" width="600" height="30"/>
+                                <rect key="frame" x="0.0" y="136" width="600" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vyu-x9-KjR">
-                                <rect key="frame" x="0.0" y="162" width="600" height="438"/>
+                                <rect key="frame" x="0.0" y="170" width="600" height="430"/>
                                 <connections>
                                     <outlet property="delegate" destination="TEh-ef-zXG" id="NmK-pL-l8w"/>
                                 </connections>
@@ -129,20 +129,38 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="UVd-lB-3ng" firstAttribute="top" secondItem="rqR-vQ-EQG" secondAttribute="bottom" id="0aT-Ul-nmx"/>
+                            <constraint firstItem="vyu-x9-KjR" firstAttribute="top" secondItem="UVd-lB-3ng" secondAttribute="bottom" constant="4" id="1uY-Ca-0fN"/>
                             <constraint firstItem="5b0-De-gGD" firstAttribute="top" secondItem="rSA-MA-m8U" secondAttribute="bottom" id="8cP-2i-TZk"/>
                             <constraint firstItem="vyu-x9-KjR" firstAttribute="leading" secondItem="d99-vu-wa9" secondAttribute="leading" id="9hY-Sh-WNO"/>
                             <constraint firstItem="UVd-lB-3ng" firstAttribute="top" secondItem="rqR-vQ-EQG" secondAttribute="bottom" id="ANp-ag-dZn"/>
                             <constraint firstAttribute="trailing" secondItem="5b0-De-gGD" secondAttribute="trailing" id="BXf-K3-9Qr"/>
+                            <constraint firstItem="5b0-De-gGD" firstAttribute="top" secondItem="rSA-MA-m8U" secondAttribute="bottom" constant="4" id="EA8-0P-LpM"/>
                             <constraint firstItem="rqR-vQ-EQG" firstAttribute="top" secondItem="5b0-De-gGD" secondAttribute="bottom" id="KD7-f5-DNn"/>
                             <constraint firstAttribute="trailing" secondItem="UVd-lB-3ng" secondAttribute="trailing" id="LMV-7C-mvb"/>
                             <constraint firstItem="5b0-De-gGD" firstAttribute="leading" secondItem="d99-vu-wa9" secondAttribute="leading" id="NR1-KI-iYZ"/>
+                            <constraint firstItem="rqR-vQ-EQG" firstAttribute="top" secondItem="5b0-De-gGD" secondAttribute="bottom" constant="4" id="Owt-lk-JHj"/>
                             <constraint firstAttribute="trailing" secondItem="rqR-vQ-EQG" secondAttribute="trailing" id="UUm-bw-Scn"/>
+                            <constraint firstItem="vyu-x9-KjR" firstAttribute="top" secondItem="UVd-lB-3ng" secondAttribute="bottom" constant="8" id="Z7j-kt-JMq"/>
+                            <constraint firstItem="vyu-x9-KjR" firstAttribute="top" secondItem="UVd-lB-3ng" secondAttribute="bottom" constant="8" id="apO-B3-J7L"/>
                             <constraint firstAttribute="trailing" secondItem="vyu-x9-KjR" secondAttribute="trailing" id="bkJ-AD-SoL"/>
                             <constraint firstItem="UVd-lB-3ng" firstAttribute="leading" secondItem="d99-vu-wa9" secondAttribute="leading" id="iLK-jh-kWy"/>
                             <constraint firstAttribute="bottom" secondItem="vyu-x9-KjR" secondAttribute="bottom" id="ipN-zB-aaW"/>
                             <constraint firstItem="rqR-vQ-EQG" firstAttribute="leading" secondItem="d99-vu-wa9" secondAttribute="leading" id="lCF-Vg-jXi"/>
+                            <constraint firstItem="UVd-lB-3ng" firstAttribute="top" secondItem="rqR-vQ-EQG" secondAttribute="bottom" constant="4" id="p1c-7S-TqQ"/>
                             <constraint firstItem="vyu-x9-KjR" firstAttribute="top" secondItem="UVd-lB-3ng" secondAttribute="bottom" constant="8" id="r5L-FA-uSG"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8cP-2i-TZk"/>
+                                <exclude reference="KD7-f5-DNn"/>
+                                <exclude reference="0aT-Ul-nmx"/>
+                                <exclude reference="ANp-ag-dZn"/>
+                                <exclude reference="Z7j-kt-JMq"/>
+                                <exclude reference="apO-B3-J7L"/>
+                                <exclude reference="r5L-FA-uSG"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Add Location" id="PCe-E2-HgN">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="OHf-xL-EQ2">
@@ -224,7 +242,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="h5t-zV-iI2">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h5t-zV-iI2">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <connections>
                                     <outlet property="delegate" destination="WGM-Dh-tR8" id="pBH-Ul-0G7"/>
@@ -302,6 +320,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.40134263038635254" green="0.65999996662139893" blue="0.81286561489105225" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

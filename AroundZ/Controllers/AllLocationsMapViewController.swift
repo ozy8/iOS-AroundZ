@@ -24,7 +24,6 @@ class AllLocationsMapViewController: UIViewController {
     @IBOutlet weak var allLocationsMapView: MKMapView!
 
     override func viewDidLoad() {
-//        self.tableView.reloadData()
 
         super.viewDidLoad()
         locationManager.delegate = self
@@ -49,54 +48,7 @@ class AllLocationsMapViewController: UIViewController {
         
         allLocationsSearchTable.handleMapSearchDelegate = self
         
-//        //creating locations to be used later
-//        locations = RealmHelper.retrieveLocations()
-//        print(locations[0])
-//
-//        //creating annotations to populate map with all the POI
-//        var annotations = [MKPointAnnotation]()
-//        
-//        for location in locations {
-//
-////            let coordinate = CLLocationCoordinate2D(latitude: convertedLatitude, longitude: convertedLongitude)
-//            print(location.address)
-////            forwardGeocoding(location.address)
-//            
-//            var place : CLLocationCoordinate2D?
-//            
-//            CLGeocoder().geocodeAddressString(location.address, completionHandler: { (placemarks, error) in
-//                if error != nil {
-//                    print(error)
-//                    return
-//                }
-//                if placemarks?.count > 0 {
-//                    let placemark = placemarks?[0]
-//                    let location = placemark?.location
-//                    let coordinate = location?.coordinate
-//                    print("\nlat: \(coordinate!.latitude), long: \(coordinate!.longitude)")
-//                    place = coordinate
-//                }
-//            print(place)
-//            
-//            
-//            let name = location.name
-////            let mediaURL = dictionary["mediaURL"] as! String
-//            let annotation = MKPointAnnotation()
-//            annotation.coordinate = place!
-//            print("big bang")
-//            print(annotation.coordinate)
-//            annotation.title = "\(name)"
-////            annotation.subtitle = mediaURL
-//            annotations.append(annotation)
-//             
-//                
-//                //calling the func created below
-//                self.centerMapOnLocation(annotations[0], regionRadius: 1000.0)
-//                
-//                //add annotations to mapView
-//                self.allLocationsMapView.addAnnotations(annotations)
-//           })
-//        }
+
     }
     
     
@@ -105,16 +57,13 @@ class AllLocationsMapViewController: UIViewController {
 
         //creating locations to be used later
         locations = RealmHelper.retrieveLocations()
-//        print(locations[0])
         
         //creating annotations to populate map with all the POI
         var annotations = [MKPointAnnotation]()
         
         for location in locations {
             
-            //            let coordinate = CLLocationCoordinate2D(latitude: convertedLatitude, longitude: convertedLongitude)
             print(location.address)
-            //            forwardGeocoding(location.address)
             
             var place : CLLocationCoordinate2D?
             
@@ -134,7 +83,6 @@ class AllLocationsMapViewController: UIViewController {
                 
                 
                 let name = location.name
-                //            let mediaURL = dictionary["mediaURL"] as! String
                 let annotation = MKPointAnnotation()
                 annotation.coordinate = place!
                 print(annotation.coordinate)
@@ -159,17 +107,6 @@ class AllLocationsMapViewController: UIViewController {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
                                                                   regionRadius * 2.0, regionRadius * 2.0)
         allLocationsMapView.setRegion(coordinateRegion, animated: true)
-    }
-    
-    
-
-    
-    func getDirections(){
-        if let selectedPin = selectedPin {
-            let addDestinationMapView = MKMapItem(placemark: selectedPin)
-            let launchOptions = [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving]
-            addDestinationMapView.openInMapsWithLaunchOptions(launchOptions)
-        }
     }
 }
 
@@ -212,26 +149,6 @@ extension AllLocationsMapViewController: HandleMapSearch {
         let span = MKCoordinateSpanMake(0.05, 0.05)
         let region = MKCoordinateRegionMake(placemark.coordinate, span)
         allLocationsMapView.setRegion(region, animated: true)
-    }
-}
-
-extension AllLocationsMapViewController : MKMapViewDelegate {
-    func addDestinationMapView(addDestinationMapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?{
-        if annotation is MKUserLocation {
-            //return nil so map view draws "blue dot" for standard user location
-            return nil
-        }
-        let reuseId = "pin"
-        var pinView = addDestinationMapView.dequeueReusableAnnotationViewWithIdentifier(reuseId) as? MKPinAnnotationView
-        pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-        pinView?.pinTintColor = UIColor.orangeColor()
-        pinView?.canShowCallout = true
-        let smallSquare = CGSize(width: 30, height: 30)
-        let button = UIButton(frame: CGRect(origin: CGPointZero, size: smallSquare))
-        button.setBackgroundImage(UIImage(named: "car"), forState: .Normal)
-        button.addTarget(self, action: #selector(AllLocationsMapViewController.getDirections), forControlEvents: .TouchUpInside)
-        pinView?.leftCalloutAccessoryView = button
-        return pinView
     }
 }
 
