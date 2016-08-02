@@ -93,7 +93,7 @@ class AllLocationsMapViewController: UIViewController {
                 
                 //calling the func created below
                 self.centerMapOnLocation(annotations[0], regionRadius: 1000.0)
-                
+
                 //add annotations to mapView
                 self.allLocationsMapView.addAnnotations(annotations)
             })
