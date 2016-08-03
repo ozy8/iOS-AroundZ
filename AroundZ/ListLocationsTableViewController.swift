@@ -33,6 +33,7 @@ class ListLocationsTableViewController: UITableViewController {
         
         let location = locations[row]
         
+        cell.locationTitleLabel.adjustsFontSizeToFitWidth = false        
         cell.locationTitleLabel.text = location.name
         cell.locationModificationTimeLabel.text = location.modificationTime.convertToString()
         cell.locationCategoryLabel.text = location.category

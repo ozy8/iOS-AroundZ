@@ -29,7 +29,7 @@ class DisplayLocationViewController: UIViewController, UIPickerViewDataSource, U
     var location: Location?
     
     //creating the dataSource for the cateogry picker view/maybe can create a class in future
-    var categoryTypes = ["Cafes", "Hawkers", "Restaurants", "Shopping", "Meeting Point", "Hotels", "Random"]
+    var categoryTypes = ["Cafe", "Hawker", "Restaurant", "Bar", "Local Hangout", "Touristy", "Point of Interest", "Shopping", "Meeting Point", "Accomodation", "Random"]
     var picker = UIPickerView()
     
     

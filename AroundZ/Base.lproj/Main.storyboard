@@ -40,33 +40,40 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNC-dn-1vZ">
-                                            <rect key="frame" x="17" y="8" width="109" height="22"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNC-dn-1vZ">
+                                            <rect key="frame" x="17" y="8" width="420" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                             <color key="textColor" red="0.32549019607843138" green="0.6588235294117647" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Modification Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLL-xO-LC3">
-                                            <rect key="frame" x="17" y="31" width="186" height="18"/>
+                                            <rect key="frame" x="17" y="30" width="186" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" red="0.40392156862745099" green="0.396078431372549" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Category" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMR-of-deI">
-                                            <rect key="frame" x="466" y="9" width="126" height="18"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Location Category" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMR-of-deI">
+                                            <rect key="frame" x="468" y="9" width="124" height="18"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="IMR-of-deI" firstAttribute="top" secondItem="nue-Zp-igL" secondAttribute="topMargin" constant="1" id="3GQ-th-Spi"/>
+                                        <constraint firstItem="IMR-of-deI" firstAttribute="leading" secondItem="jNC-dn-1vZ" secondAttribute="trailing" id="5Vf-Yc-5h4"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="IMR-of-deI" secondAttribute="trailing" id="9TZ-d7-D1p"/>
                                         <constraint firstItem="dLL-xO-LC3" firstAttribute="leading" secondItem="nue-Zp-igL" secondAttribute="leadingMargin" constant="9" id="Cdh-wy-jdx"/>
                                         <constraint firstItem="jNC-dn-1vZ" firstAttribute="leading" secondItem="nue-Zp-igL" secondAttribute="leadingMargin" constant="9" id="EuE-ov-isb"/>
                                         <constraint firstItem="dLL-xO-LC3" firstAttribute="top" secondItem="jNC-dn-1vZ" secondAttribute="bottom" constant="1" id="QlV-xu-c2g"/>
                                         <constraint firstAttribute="topMargin" secondItem="jNC-dn-1vZ" secondAttribute="top" id="WQ4-uP-I4C"/>
+                                        <constraint firstItem="IMR-of-deI" firstAttribute="leading" secondItem="jNC-dn-1vZ" secondAttribute="trailing" constant="31" id="kXs-hh-1Va"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="5Vf-Yc-5h4"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="locationCategoryLabel" destination="IMR-of-deI" id="odG-lu-UAx"/>
